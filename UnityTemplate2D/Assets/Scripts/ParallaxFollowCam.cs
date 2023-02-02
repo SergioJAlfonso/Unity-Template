@@ -13,7 +13,6 @@ public class ParallaxFollowCam : MonoBehaviour
     Transform subject;
 
     Vector2 startPos;
-    Vector3 camInitPos;
     float startZ;
 
     Vector2 travel; 
@@ -25,7 +24,6 @@ public class ParallaxFollowCam : MonoBehaviour
     {
         startPos = transform.position;
         startZ = transform.position.z;
-        camInitPos = cam.transform.position;
 
         imageSize = transform.GetChild(0).GetComponent<SpriteRenderer>().bounds.size.x;
 
@@ -42,7 +40,6 @@ public class ParallaxFollowCam : MonoBehaviour
         {
             startPos = (Vector2)cam.transform.position;
             transform.position = new Vector3(startPos.x, startPos.y, startZ);
-            camInitPos = cam.transform.position;
         }
             
         travel = (Vector2)(cam.transform.position) - startPos;

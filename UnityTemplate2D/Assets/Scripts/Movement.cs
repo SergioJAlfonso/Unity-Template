@@ -5,29 +5,53 @@ using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
-    public enum Direccion { up, down, left, right }
-
     [SerializeField]
     float velocity;
 
-    private Rigidbody rb;
-    private PlayerInput input;
+    [SerializeField]
+    float jumpVelocity;
 
-    void Start()
+    private Rigidbody rb;
+    private PlayerController playerActions;
+
+    bool jump = false;
+
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        input = GetComponent<PlayerInput>();
+        playerActions = new PlayerController();
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        //Movement WASD
+        Vector2 moveVal = playerActions.Player.Move.ReadValue<Vector2>();
+        Vector3 inputDirection = new Vector3(moveVal.x, 0, moveVal.y).normalized * velocity;
+
+        rb.velocity = inputDirection;
+
+        //Jump
+        if (jump)
+        {
+            rb.AddForce(Vector2.up * jumpVelocity, ForceMode.Impulse);
+            jump = false;
+        }
 
     }
 
-    public void Move()
+    private void Update()
     {
-        // normalise input direction
-        input.actionEvents.GetEnumerator();
-        Vector3 inputDirection = new Vector3(input.move.x, 0.0f, input.move.y).normalized;
+        if (playerActions.Player.Jump.triggered)
+            jump = true;
+    }
+
+    private void OnEnable()
+    {
+        playerActions.Player.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerActions.Player.Disable();
     }
 }
