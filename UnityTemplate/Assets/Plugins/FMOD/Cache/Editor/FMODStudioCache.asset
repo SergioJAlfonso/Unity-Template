@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6308651136719988367
+--- !u!114 &-8676181744280183214
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,13 +12,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master Bank.strings.bank
   m_EditorClassIdentifier: 
-  Path: ../FmodAssets/First Person Footsteps/Build/Desktop/Master Bank.strings.bank
+  Path: Assets/ProyectoFmod/Build/Desktop/Master Bank.strings.bank
   Name: Master Bank.strings
   StudioPath: bank:/Master Bank.strings
-  lastModified: 638108835534550860
+  lastModified: 638108973526165336
   FileSizes:
   - Name: 
-    Value: 1052
+    Value: 1054
+  Exists: 1
+--- !u!114 &-7480174427121720893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/ProyectoFmod/Build/Desktop/Master Bank.bank
+  Name: Master Bank
+  StudioPath: bank:/Master Bank
+  lastModified: 638108973526105499
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-5300791253678419543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump and Land/Jump Or Land
+  m_EditorClassIdentifier: 
+  Name: Jump Or Land
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4099261617
+    data2: 3744843255
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Jump
+  - Land
   Exists: 1
 --- !u!114 &-4068933743323398899
 MonoBehaviour:
@@ -39,7 +83,7 @@ MonoBehaviour:
     Data3: -1541134971
     Data4: 1918609358
   Banks:
-  - {fileID: 3369319951089925218}
+  - {fileID: -7480174427121720893}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -62,48 +106,19 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -6308651136719988367}
-  - {fileID: 3369319951089925218}
+  - {fileID: -8676181744280183214}
+  - {fileID: -7480174427121720893}
   EditorEvents:
-  - {fileID: 3053741776634599394}
   - {fileID: -4068933743323398899}
   - {fileID: 2054016386135776621}
+  - {fileID: 897784550246657944}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 3369319951089925218}
+  - {fileID: -7480174427121720893}
   StringsBanks:
-  - {fileID: -6308651136719988367}
-  cacheTime: 638108835534550860
+  - {fileID: -8676181744280183214}
+  cacheTime: 638108973526165336
   cacheVersion: 131601
---- !u!114 &292510774057097360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Jump & Land/Material
-  m_EditorClassIdentifier: 
-  Name: Material
-  StudioPath: 
-  Min: 0
-  Max: 4
-  Default: 0
-  ID:
-    data1: 3544653523
-    data2: 3635145482
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - Earth
-  - Stone
-  - Grass
-  - Puddle
-  - Wood
-  Exists: 1
 --- !u!114 &821074110507569196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +145,35 @@ MonoBehaviour:
   - Walking
   - Running
   Exists: 1
+--- !u!114 &897784550246657944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jump and Land
+  m_EditorClassIdentifier: 
+  Path: event:/Jump and Land
+  Guid:
+    Data1: -978565242
+    Data2: 1264157142
+    Data3: 67732638
+    Data4: -636328597
+  Banks:
+  - {fileID: -7480174427121720893}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 3490316334416656305}
+  - {fileID: -5300791253678419543}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2054016386135776621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +193,7 @@ MonoBehaviour:
     Data3: -424768352
     Data4: 1202175305
   Banks:
-  - {fileID: 3369319951089925218}
+  - {fileID: -7480174427121720893}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -157,7 +201,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
---- !u!114 &3053741776634599394
+--- !u!114 &3490316334416656305
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,43 +210,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Jump & Land
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump and Land/Material
   m_EditorClassIdentifier: 
-  Path: event:/Jump & Land
-  Guid:
-    Data1: -978565242
-    Data2: 1264157142
-    Data3: 67732638
-    Data4: -636328597
-  Banks:
-  - {fileID: 3369319951089925218}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 292510774057097360}
-  - {fileID: 8735272468369411431}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &3369319951089925218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master Bank.bank
-  m_EditorClassIdentifier: 
-  Path: ../FmodAssets/First Person Footsteps/Build/Desktop/Master Bank.bank
-  Name: Master Bank
-  StudioPath: bank:/Master Bank
-  lastModified: 638108835534461100
-  FileSizes: []
+  Name: Material
+  StudioPath: 
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 3544653523
+    data2: 3635145482
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Earth
+  - Stone
+  - Grass
+  - Puddle
+  - Wood
   Exists: 1
 --- !u!114 &6883097344330439055
 MonoBehaviour:
@@ -232,30 +258,4 @@ MonoBehaviour:
   - Grass
   - Puddle
   - Wood
-  Exists: 1
---- !u!114 &8735272468369411431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Jump & Land/Jump Or Land
-  m_EditorClassIdentifier: 
-  Name: Jump Or Land
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 4099261617
-    data2: 3744843255
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - Jump
-  - Land
   Exists: 1
