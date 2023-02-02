@@ -38,9 +38,15 @@ public class ParallaxFollowCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        travel = (Vector2)(cam.transform.position - camInitPos) - startPos;
-        if (Mathf.Abs(travel.x) > imageSize)
-            cam.transform.position = camInitPos;
+        if (Mathf.Abs(travel.x) * (1-parallaxFactor) > imageSize)
+        {
+            startPos = (Vector2)cam.transform.position;
+            transform.position = new Vector3(startPos.x, startPos.y, startZ);
+            camInitPos = cam.transform.position;
+        }
+            
+        travel = (Vector2)(cam.transform.position) - startPos;
+        Debug.Log(travel.x*parallaxFactor + " - " + parallaxFactor + " - " + imageSize);
 
         Vector2 newPos = startPos + travel * parallaxFactor;
         transform.position = new Vector3(newPos.x, newPos.y, startZ);
